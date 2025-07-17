@@ -1,0 +1,25 @@
+{
+  "appId": "com.example.app",
+  "productName": "template-app",
+  "directories": {
+    "output": "dist"
+  },
+  "files": ["dist/**/*", "electron/**/*"],
+  "win": {
+    "target": [
+      {
+        "target": "nsis",
+        "arch": ["x64"]
+      }
+    ],
+    "icon": "public/favicon.png"
+  },
+  "extraResources": [{ "from": "public/favicon.png", "to": "favicon.png" }],
+  "nsis": {
+    "oneClick": false,
+    "allowToChangeInstallationDirectory": true,
+    "createDesktopShortcut": true,
+    "createStartMenuShortcut": true,
+    "artifactName": "${productName}-${version}-setup.exe"
+  }
+}
